@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MAUMAU {
 
     public static void main(String[] args) {
-
+// declaração de variaveis / entradas / perguntas aos usuarios
         Scanner signo = new Scanner(System.in);
         String nome;
         int sexo, dia, mesNasci;
@@ -21,9 +21,11 @@ public class MAUMAU {
         System.out.println("Informe o seu sexo ( 1 - FEMININO, 2 - MASCULINO) Qualquer outro numero sera masculino:");
         sexo = signo.nextInt();
 
+        //declarei que se sexo for igual a 1 ele sera feminino, caso não seja 1 ele sera masculino em qualquer outra alternativa
+     
         String genero;
 
-        if (sexo == 1) {
+       if (sexo == 1) {
             genero = "Feminino";
         } else {
             genero = "Masculino";
@@ -44,6 +46,8 @@ public class MAUMAU {
                 if (anoNasci > 1900 && anoNasci <= 2025) {
                     int idade = 2025 - anoNasci;
 
+                    // calculo dos signos apartir das info declaradas e usando quase o mesmo metodo do sexo do usuario 
+                    
                     String signos = null;
 
                     if ((dia >= 21 && mesNasci == 3) || (dia <= 20 && mesNasci == 4)) {
@@ -94,6 +98,8 @@ public class MAUMAU {
                         signos = "Peixes";
                     }
 
+                    // Numero da Sorte / Cor da sorte
+                 
                     int numeroSorte = 1 + (int) (Math.random() * 99);
 
                     int numCor = 1 + (int) (Math.random() * 5);
@@ -108,7 +114,7 @@ public class MAUMAU {
                     } else if (numCor == 4) {
                         cor = "branco";
                     }
-
+// Saida Final
                     System.out.println("Sr.(a) " + nome + " nascido(a) em " + dia + "/" + mesNasci + "/" + anoNasci + " é do signo de " + signos + " Você tem " + idade + " anos. Seu número da sorte é " + numeroSorte + " e sua cor é " + cor);
                     signo.close();
 
